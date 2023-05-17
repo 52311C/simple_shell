@@ -1,1 +1,5 @@
-This file lists all contributors to this repository.
+#This file lists all contributors to this repository.
+#See hack/generate-authors.sh to make modifications
+
+Cindy Karanja <karanjacindy@gmail.com>
+Mathias Othiambo <...@gmail.com>
