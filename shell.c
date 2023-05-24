@@ -50,7 +50,7 @@ int _fork(char *buff, char **arv, char *pathbuffer)
 		if (results == -1)
 		{
 			perror(arv[0]);
-			for (; av[i]; i++)
+			for (; arv[i]; i++)
 			{
 				free(av[i]);
 			}
@@ -170,7 +170,7 @@ char *_pathbuffer(char **arv, char *path, char *dup)
 	static char tmp[512];
 
 	dup = NULL;
-	dup = _str(path);
+	dup = _strcop(path);
 	count = cutup(dup);
 	tkn = strtok(dup, ": =");
 	while (tkn != NULL)
