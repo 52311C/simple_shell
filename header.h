@@ -11,12 +11,12 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-#define buff_size 1024;
+#define buff_size 1024
 int _putchar(char c);
 int prompt_user(void);
-int _for(char *buff, char**arv, char *pathbuffer);
+int _for(char *buff, char **arv, char *pathbuffer);
 extern char **environ;
-int  builtin(chcar *buff, char**arv, int EXIT_STATUS);
+int  builtin(chcar *buff, char **arv, int EXIT_STATUS);
 int _strcp(const char *s1, const char *s2);
 int cutup(char *str);
 int len_ofstr(char *c);

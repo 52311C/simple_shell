@@ -6,7 +6,7 @@
  * Return: o
  */
 
-int main (void)
+int main(void)
 {
 	char c = 'a';
 
