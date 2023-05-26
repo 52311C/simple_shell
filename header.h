@@ -16,7 +16,7 @@ int _putchar(char c);
 int prompt_user(void);
 int _for(char *buff, char **arv, char *pathbuffer);
 extern char **environ;
-int  builtin(chcar *buff, char **arv, int EXIT_STATUS);
+int  builtin(char *buff, char **arv, int EXIT_STATUS);
 int _strcp(const char *s1, const char *s2);
 int cutup(char *str);
 int len_ofstr(char *c);
