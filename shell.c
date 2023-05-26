@@ -27,7 +27,7 @@ int _fork(char *buff, char **arv, char *pathbuffer)
 			perror(arv[0]);
 			for (; arv[i]; i++)
 			{
-				free(av[i]);
+				free(arv[i]);
 			}
 			free(arv);
 			free(buff);
@@ -105,7 +105,7 @@ char *reader(void)
 
 	i = 0;
 	r = 0;
-	count = getline(&buff, &r, STDIN);
+	count = getline(&buff, &r, STDIN_FILENO);
 	if (count == -1)
 	{
 		free(buff);
@@ -123,8 +123,8 @@ char *reader(void)
 	{
 		if (buff[i] == '#' && buff[i - 1] == ' ')
 		{
-			buff[i] = '\0'
-				break;
+			buff[i] = '\0';
+			break;
 		}
 	}
 	return (buff);
@@ -146,7 +146,7 @@ char *_pathbuffer(char **arv, char *path, char *dup)
 	static char tmp[512];
 
 	dup = NULL;
-	dup = _strcop(path);
+	dup = strcop(path);
 	count = cutup(dup);
 	tkn = strtok(dup, ": =");
 	while (tkn != NULL)

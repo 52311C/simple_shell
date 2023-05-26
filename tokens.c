@@ -11,9 +11,11 @@
 char *cat(char *tkn, char **arv, char *tmp)
 {
 	int i = 0;
+	int n;
 
+	n = atoi(tmp);
 	mem(tmp, 0, 512);
-	i = len_ofst(tkn) + len_ofstr(arv[0]) + 2;
+	i = len_ofstr(tkn) + len_ofstr(arv[0]) + 2;
 	str_cat(tmp, tkn);
 	str_cat(tmp, "/");
 	str_cat(tmp, arv[0]);
@@ -33,7 +35,7 @@ char **token(char *buff)
 	int i, count = 0;
 
 	count = cutup(buff);
-	if (!wordcount)
+	if (!count)
 	{
 		return (NULL);
 	}
@@ -45,7 +47,7 @@ char **token(char *buff)
 	tkn = strtok(buff, delm);
 	while (tkn != NULL)
 	{
-		arv[i] = strcp(tkn);
+		arv[i] = strcop(tkn);
 		tkn = strtok(NULL, delm);
 		i++;
 	}

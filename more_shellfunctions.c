@@ -54,7 +54,7 @@ char *_getenv(const char *pname)
 
 	for (a = 0; environ[a]; a++)
 	{
-		results = _pthstrcp(pname, environ[a]);
+		results = _strcp(pname, environ[a]);
 		if (results == 0)
 		{
 			return (environ[a]);
