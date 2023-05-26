@@ -16,7 +16,7 @@ char *strcop(char *str)
 	{
 		return (NULL);
 	}
-	for (i = 0; str[i] ! = '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 	}
 	dest = malloc(sizeof(char) * (i + 1));
@@ -24,7 +24,7 @@ char *strcop(char *str)
 	{
 		return (NULL);
 	}
-	for ( i= 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		dest[i] = str[i];
 	}
@@ -92,7 +92,7 @@ int _strcp(const char *s1, const char *s2)
 }
 
 /**
- * int cutup -  Counts words in string
+ * cutup -  Counts words in string
  * @str: Pointer to string
  * Return: Number of words
  */
@@ -115,89 +115,4 @@ int cutup(char *str)
 		}
 	}
 	return (count);
-}
-
-/**
- * _putchar - Prints a char
- * @c: Character
- * Return: Return value of write
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * mem - Fills mem with constant byte
- * @s: Pointer to char array
- * @b: Constant byte
- * @n: Number of bytes
- * Return: Pointer to char array
- */
-
-char *mem(char b, char *s, unsigned int n)
-{
-	unsigned int i = 0;
-	
-	for (; i < n; i++)
-	{
-		s[i] = b;
-	}
-	return (s);
-}
-
-/**
- * _env - Prints environ
- *
- * Return : 0
- */
-
-int _env(void)
-{
-	int a;
-
-	for (a = 0; environ[a]; a++)
-	{
-		_puts(environ[a]);
-	}
-	return (0);
-}
-
-/**
- * _puts - Print string
- * @str: String valu
- * Return: void
- */
-
-void _puts(char *str)
-{
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-	}
-	_putchar('\n');
-}
-
-/**
- * _getenv - Get path from environ
- * @pname: Pointer to string
- * Return: Pointer to path string, NULL otherwise
- */
-
-char *_getenv(const char *pname)
-{
-	int a, results
-
-	for (a = 0; environ[a]; a++)
-	{
-		results = _pthstrcp(pname, environ[i]);
-		if (results == 0)
-		{
-			return (environ[a]);
-		}
-	}
-	return (NULL);
 }

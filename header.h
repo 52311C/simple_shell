@@ -12,6 +12,17 @@
 #include <sys/wait.h>
 
 #define buff_size 1024
+
+/**
+ * _putchar - Prints a char
+ * @c: Character
+ * Return: Value of write
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 int _putchar(char c);
 int prompt_user(void);
 int _for(char *buff, char **arv, char *pathbuffer);

@@ -8,7 +8,7 @@
  * Return: 0
  */
 
-char *cat(char *tkn, char **arv, char*tmp)
+char *cat(char *tkn, char **arv, char *tmp)
 {
 	int i = 0;
 
@@ -16,7 +16,7 @@ char *cat(char *tkn, char **arv, char*tmp)
 	i = len_ofst(tkn) + len_ofstr(arv[0]) + 2;
 	str_cat(tmp, tkn);
 	str_cat(tmp, "/");
-	str_cat(tmp,arv[0]);
+	str_cat(tmp, arv[0]);
 	tmp[i - 1] = '\0';
 	return (tmp);
 }
@@ -30,20 +30,20 @@ char *cat(char *tkn, char **arv, char*tmp)
 char **token(char *buff)
 {
 	char  *tkn = NULL, *delm = "\n", **arv = NULL;
-	int i; count = 0;
+	int i, count = 0;
 
 	count = cutup(buff);
 	if (!wordcount)
 	{
 		return (NULL);
 	}
-	arv = malloc ((count + 1) * sizeof(char *));
+	arv = malloc((count + 1) * sizeof(char *));
 	if (arv == NULL)
 	{
-		exit (1);
+		exit(1);
 	}
 	tkn = strtok(buff, delm);
-	while(tkn != NULL)
+	while (tkn != NULL)
 	{
 		arv[i] = strcp(tkn);
 		tkn = strtok(NULL, delm);

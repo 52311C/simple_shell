@@ -1,36 +1,11 @@
 #include "header.h"
 
 /**
- * prompt_user - A prompt
- *
- * Return: 0
- */
-
-int prompt_user(void)
-{
-	char *pmpt = "$ ";
-	ssize_t count = 0;
-
-	/**
-	 * isatty checks whether fd refers to a terminal
-	 */
-	if (isatty(STDIN_FILENO) == 1)
-	{
-		count = write(STDOUT_FILENO, pmpt, 2);
-		if (count == -1)
-		{
-			exit(0);
-		}
-	}
-	return (0);
-}
-
-/**
  * _fork - Creates child process
  * @arv: Pointer to array of string users
  * @buff: Pointer to string
  * @pathbuffer: Pointer to input
- * Return : 0
+ * Return: 0
  */
 
 int _fork(char *buff, char **arv, char *pathbuffer)
@@ -74,7 +49,7 @@ int _fork(char *buff, char **arv, char *pathbuffer)
 	}
 	free(buff);
 	free(arv);
-	return(EXIT_STATUS);
+	return (EXIT_STATUS);
 }
 
 /**
@@ -85,9 +60,10 @@ int _fork(char *buff, char **arv, char *pathbuffer)
  * Return: 1 if string == env, 0 otherwise
  */
 
-int builtin(char *buff, char**arv, int EXIT_STATUS)
+int builtin(char *buff, char **arv, int EXIT_STATUS)
 {
 	int i = 0;
+
 	if (_strcp(arv[0], "env") == 0)
 	{
 		_env();
@@ -135,15 +111,15 @@ char *reader(void)
 		free(buff);
 		if (isatty(STDIN_FILENO) != 0)
 		{
-				write(STDOUT_FILENO, "\n", 1);
+			write(STDOUT_FILENO, "\n", 1);
 		}
-		exit (0);
+		exit(0);
 	}
 	if (buff[count - 1] == '\n' || buff[count - 1] == '\t')
 	{
 		buff[count - 1] = '\0';
 	}
-	for ( i = 0; buff[i]; i++)
+	for (i = 0; buff[i]; i++)
 	{
 		if (buff[i] == '#' && buff[i - 1] == ' ')
 		{
